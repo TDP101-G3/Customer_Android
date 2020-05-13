@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group >
+        <item
+            android:id="@+id/customerFragment"
+            android:title="@string/textData" />
+        <item
+            android:id="@+id/walletFragment"
+            android:title="@string/textWallet" />
+        <item
+            android:id="@+id/orderListFragment"
+            android:title="@string/textOrder" />
+        <item
+            android:id="@+id/opinionFragment"
+            android:title="@string/textOpinion" />
+        <item
+            android:id="@+id/logout"
+            android:title="@string/textLogout" />
+    </group>
+</menu>

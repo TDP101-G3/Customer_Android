@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="#BCE0FD">>
+
+    <ImageView
+        android:id="@+id/ivInsuranceIcon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/insurance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+         />
+
+    <TextView
+        android:id="@+id/tvInsuranceDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="2020/06/24"
+        android:textColor="#2699FB"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvExpire"
+        app:layout_constraintStart_toEndOf="@+id/tvExpire" />
+
+    <TextView
+        android:id="@+id/tvInsuranceResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/textNotConfirmed"
+        android:textColor="#2699FB"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvExpire"
+        app:layout_constraintStart_toEndOf="@+id/ivSituation" />
+
+    <TextView
+        android:id="@+id/tvExpire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/textExpire"
+        android:textColor="#2699FB"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/tvInsuranceTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvInsuranceTitle" />
+
+    <ImageView
+        android:id="@+id/ivChecked"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/notchecked"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ivInsuranceIcon"
+        app:layout_constraintStart_toStartOf="@+id/ivInsuranceIcon" />
+
+    <ImageView
+        android:id="@+id/ivSituation"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginLeft="110dp"
+        android:src="@android:drawable/ic_dialog_alert"
+        app:layout_constraintBottom_toBottomOf="@+id/tvExpire"
+        app:layout_constraintStart_toEndOf="@+id/tvExpire" />
+
+    <TextView
+        android:id="@+id/tvInsuranceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="130dp"
+        android:text="@string/textCarDamage"
+        android:textColor="#2699FB"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivInsuranceEdit"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/edit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

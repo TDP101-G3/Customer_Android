@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@android:color/white">
+        <shape android:shape="rectangle"  >
+            <stroke android:width="2dp" android:color="#BCE0FD" />
+        </shape>
+    </item>
+</selector>
+
+<!-- 放在drawable資料夾下，按鈕的xml要加android:background="@drawable/main_button"-->

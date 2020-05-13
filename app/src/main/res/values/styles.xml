@@ -1,0 +1,21 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">#B5B5B5</item>
+    </style>
+
+    <style name="TextInputError" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">#FF0000</item>
+        <item name="android:textStyle">bold|italic</item>
+    </style>
+
+    <style name="TextInputHint" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">#B5B5B5</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+</resources>

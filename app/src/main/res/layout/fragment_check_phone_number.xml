@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lu.customer.signup_and_login.CheckPhoneNumber" >
+
+    <TextView
+        android:id="@+id/tvPhoneNumberCheckDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/textPhoneNumberCheckDetail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilCheckNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        app:errorTextAppearance="@style/TextInputError"
+        app:hintTextAppearance="@style/TextInputHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumberCheckDetail"
+        android:layout_marginLeft="16dp">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCheckNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/textCheckNumber"
+            android:textSize="18sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btNotGetCheckNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/textNotGetCheckNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilCheckNumber"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        android:id="@+id/tvTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Timer"
+        app:layout_constraintStart_toEndOf="@+id/btNotGetCheckNumber"
+        app:layout_constraintTop_toBottomOf="@+id/tilCheckNumber"
+        android:layout_marginLeft="16dp" />
+
+    <Button
+        android:id="@+id/btConfirm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="162dp"
+        android:background="@drawable/main_button"
+        android:text="@string/textConfirm"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btNotGetCheckNumber"
+        android:layout_marginLeft="161dp"
+        android:layout_marginRight="162dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

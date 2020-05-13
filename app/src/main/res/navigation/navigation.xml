@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/login">
+
+    <fragment
+        android:id="@+id/customerFragment"
+        android:name="com.lu.customer.user.CustomerFragment"
+        android:label="fragment_customer"
+        tools:layout="@layout/fragment_customer">
+    <action
+        android:id="@+id/action_customerFragment_to_customerEditFragment"
+        app:destination="@id/customerEditFragment" />
+    <action
+        android:id="@+id/action_customerFragment_to_carInsuranceFragment"
+        app:destination="@id/carInsuranceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.lu.customer.signup_and_login.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_forgetPassword"
+            app:destination="@id/forgetPassword" />
+        <action
+            android:id="@+id/action_login_to_signUp"
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_login_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgetPassword"
+        android:name="com.lu.customer.signup_and_login.ForgetPassword"
+        android:label="fragment_forget_password"
+        tools:layout="@layout/fragment_forget_password">
+        <action
+            android:id="@+id/action_forgetPassword_to_changePassword"
+            app:destination="@id/changePassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePassword"
+        android:name="com.lu.customer.signup_and_login.ChangePassword"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password">
+        <action
+            android:id="@+id/action_changePassword_to_changePasswordSuccess"
+            app:destination="@id/changePasswordSuccess" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordSuccess"
+        android:name="com.lu.customer.signup_and_login.ChangePasswordSuccess"
+        android:label="fragment_change_password_success"
+        tools:layout="@layout/fragment_change_password_success">
+        <action
+            android:id="@+id/action_changePasswordSuccess_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.lu.customer.signup_and_login.SignUp"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUp_to_signUpCreditCard"
+            app:destination="@id/signUpCreditCard" />
+        <action
+            android:id="@+id/action_signUp_to_signUp_2"
+            app:destination="@id/signUp_2" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpCreditCard"
+        android:name="com.lu.customer.signup_and_login.SignUpCreditcrad"
+        android:label="fragment_sign_up_creditcard"
+        tools:layout="@layout/fragment_sign_up_creditcard">
+        <action
+            android:id="@+id/action_signUpCreditCard_to_signUp_2"
+            app:destination="@id/signUp_2" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkPhoneNumber"
+        android:name="com.lu.customer.signup_and_login.CheckPhoneNumber"
+        android:label="fragment_check_phone_number"
+        tools:layout="@layout/fragment_check_phone_number">
+        <action
+            android:id="@+id/action_checkPhoneNumber_to_notChecked"
+            app:destination="@id/notChecked" />
+    </fragment>
+    <fragment
+        android:id="@+id/notChecked"
+        android:name="com.lu.customer.signup_and_login.NotChecked"
+        android:label="fragment_not_checked"
+        tools:layout="@layout/fragment_not_checked" />
+    <fragment
+        android:id="@+id/signUp_2"
+        android:name="com.lu.customer.signup_and_login.SignUp_2"
+        android:label="fragment_sign_up_2"
+        tools:layout="@layout/fragment_sign_up_2">
+        <action
+            android:id="@+id/action_signUp_2_to_checkPhoneNumber"
+            app:destination="@id/checkPhoneNumber" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerEditFragment"
+        android:name="com.lu.customer.user.CustomerEditFragment"
+        android:label="fragment_customer_edit"
+        tools:layout="@layout/fragment_customer_edit" />
+    <fragment
+        android:id="@+id/carInsuranceFragment"
+        android:name="com.lu.customer.user.CarInsuranceFragment"
+        android:label="fragment_car_insurance"
+        tools:layout="@layout/fragment_car_insurance">
+        <action
+            android:id="@+id/action_carInsuranceFragment_to_carEditFragment"
+            app:destination="@id/carEditFragment" />
+        <action
+            android:id="@+id/action_carInsuranceFragment_to_insuranceEditFragment"
+            app:destination="@id/insuranceEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carEditFragment"
+        android:name="com.lu.customer.user.CarEditFragment"
+        android:label="fragment_car_edit"
+        tools:layout="@layout/fragment_car_edit" />
+    <fragment
+        android:id="@+id/insuranceEditFragment"
+        android:name="com.lu.customer.user.insuranceEditFragment"
+        android:label="fragment_insurance_edit"
+        tools:layout="@layout/fragment_insurance_edit" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.lu.customer.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_callFragment"
+            app:destination="@id/callFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/callFragment"
+        android:name="com.lu.customer.CallFragment"
+        android:label="fragment_call"
+        tools:layout="@layout/fragment_call" />
+    <fragment
+        android:id="@+id/orderListFragment"
+        android:name="com.lu.customer.order.orderListFragment"
+        android:label="fragment_order_list"
+        tools:layout="@layout/fragment_order_list">
+        <action
+            android:id="@+id/action_orderListFragment_to_orderDetailFragment"
+            app:destination="@id/orderDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDetailFragment"
+        android:name="com.lu.customer.order.orderDetailFragment"
+        android:label="fragment_order_detail"
+        tools:layout="@layout/fragment_order_detail" />
+</navigation>
