@@ -248,12 +248,13 @@ public class SignUp_2 extends Fragment {
                             if (count == 0) {
                                 Common.showToast(activity, "註冊失敗");
                             } else {
-                                Common.showToast(activity, "註冊成功");
+                                Common.showToast(activity, "註冊成功，請重新登入");
                             }
                         } else {
                             Common.showToast(activity, "沒有連線");
                         }
-                        Navigation.findNavController(v).navigate(R.id.action_signUp_2_to_checkPhoneNumber);
+//                        Navigation.findNavController(v).navigate(R.id.action_signUp_2_to_checkPhoneNumber);
+                        Navigation.findNavController(v).navigate(R.id.action_signUp_2_to_login);
                     }
 
                 }

@@ -102,6 +102,9 @@
         <action
             android:id="@+id/action_signUp_2_to_checkPhoneNumber"
             app:destination="@id/checkPhoneNumber" />
+        <action
+            android:id="@+id/action_signUp_2_to_login"
+            app:destination="@id/login" />
     </fragment>
     <fragment
         android:id="@+id/customerEditFragment"
