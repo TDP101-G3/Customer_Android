@@ -161,4 +161,13 @@
         android:name="com.lu.customer.order.orderDetailFragment"
         android:label="fragment_order_detail"
         tools:layout="@layout/fragment_order_detail" />
+    <fragment
+        android:id="@+id/logout"
+        android:name="com.lu.customer.signup_and_login.Logout"
+        android:label="fragment_logout"
+        tools:layout="@layout/fragment_logout" >
+        <action
+            android:id="@+id/action_logout_to_login"
+            app:destination="@id/login" />
+    </fragment>
 </navigation>
