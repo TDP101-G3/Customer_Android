@@ -61,6 +61,20 @@ public class Login extends Fragment {
         return inflater.inflate(R.layout.fragment_login, container, false);
     }
 
+    //  判斷是否有偏好設定
+    @Override
+    public void onStart() {
+        super.onStart();
+        preferences = activity.getSharedPreferences(Common.PREF_FILE, MODE_PRIVATE);
+        customer_id = preferences.getInt("customer_id", customer_id);
+        customer_name = preferences.getString("customer_name", customer_name);
+        if (customer_id != 0){
+            Common.showToast(activity, "歡迎回來"+customer_name);
+            Navigation.findNavController(getView()).navigate(R.id.action_login_to_mainFragment);
+
+        }
+    }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
