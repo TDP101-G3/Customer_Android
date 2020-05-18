@@ -127,4 +127,5 @@
     <string name="TapPay_MerchantName">TW_TAISHIN</string>
     <string name="TapPay_MerchantID">123456789_TAISHIN</string>
     <string name="textTotal">Total</string>
+    <string name="textMain">首頁</string>
 </resources>

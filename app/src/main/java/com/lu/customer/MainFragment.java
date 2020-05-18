@@ -88,6 +88,7 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        activity.setTitle(R.string.textMain);
         return inflater.inflate(R.layout.fragment_main, container, false);
     }
     @Override
