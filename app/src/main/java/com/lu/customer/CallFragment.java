@@ -144,7 +144,7 @@ public class CallFragment extends Fragment {
                     tvTime.setText(time);
                 }
                 //CommonTwo.showToast(activity,"runnable start");
-                handler.postDelayed(this,6000); //6秒 單位：ms
+                handler.postDelayed(this,1000); //1秒 單位：ms
                 //postDelayed(this,6000)方法安排一個Runnable物件到主執行緒佇列中
             }
         };

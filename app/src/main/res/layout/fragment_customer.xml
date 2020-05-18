@@ -31,9 +31,11 @@
             android:id="@+id/ivCustomerPhoto"
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:layout_marginLeft="16dp"
             android:src="@drawable/ic_launcher_foreground"
-            tools:layout_editor_absoluteX="24dp"
-            tools:layout_editor_absoluteY="71dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvUserName"
