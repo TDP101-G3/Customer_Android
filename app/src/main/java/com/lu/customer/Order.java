@@ -12,6 +12,7 @@ public class Order implements Serializable {
     private double customer_score;
     private double order_money;
     private String order_time;
+    private double driver_income;
 
 
 
@@ -26,11 +27,13 @@ public class Order implements Serializable {
         this.driver_score = driver_score;
     }
 
-    public Order(int customer_id, int driver_id, String order_start, String order_end){
+    public Order(int customer_id, int driver_id, String order_start, String order_end, double order_money,double driver_income){
         this.customer_id = customer_id;
         this.driver_id = driver_id;
         this.order_start = order_start;
         this.order_end = order_end;
+        this.order_money = order_money;
+        this.driver_income = driver_income;
     }
 
     public Order(int order_id, int customer_id, int driver_id, String order_start, String order_end, double driver_score, double customer_score, double order_money, String order_time) {
@@ -108,5 +111,13 @@ public class Order implements Serializable {
     }
     public void setDriver_score(double driver_score) {
         this.driver_score = driver_score;
+    }
+
+    public double getDriver_income() {
+        return driver_income;
+    }
+
+    public void setDriver_income(double driver_income) {
+        this.driver_income = driver_income;
     }
 }
