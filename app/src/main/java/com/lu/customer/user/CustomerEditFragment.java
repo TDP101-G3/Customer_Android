@@ -29,7 +29,6 @@ public class CustomerEditFragment extends Fragment {
     private FragmentActivity activity;
     private EditText etName, etPhone, etEmail;
     private Customer customer;
-    private byte[] image;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -91,10 +90,6 @@ public class CustomerEditFragment extends Fragment {
 
                     jsonObject.addProperty("action", "updateCustomer");
                     jsonObject.addProperty("customer", new Gson().toJson(customer));
-//                    // 有圖才上傳
-//                    if (image != null) {
-//                        jsonObject.addProperty("imageBase64", Base64.encodeToString(image, Base64.DEFAULT));
-//                    }
                     int count = 0;
                     try {
                         String result = new CommonTask(url, jsonObject.toString()).execute().get();

@@ -3,6 +3,7 @@ package com.lu.customer.user;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -53,7 +54,7 @@ import static android.app.Activity.RESULT_OK;
 
 
 public class insuranceEditFragment extends Fragment implements DatePickerDialog.OnDateSetListener {
-    private static final String TAG = "TAG_InsuranceEditFragment";
+    private String TAG = "TAG_InsuranceEditFragment";
     private FragmentActivity activity;
     private TextView tvInsuranceName, tvInsuranceDate;
     private Insurance insurance;
@@ -65,7 +66,7 @@ public class insuranceEditFragment extends Fragment implements DatePickerDialog.
     private static final int PER_EXTERNAL_STORAGE = 201;
     private Uri contentUri, croppedImageUri;
     private ConstraintLayout layoutExpire;
-    private static int year, month, day;
+    private static int mYear, mMonth, mDay;
     private int customer_id ;
 
     @Override
@@ -112,10 +113,13 @@ public class insuranceEditFragment extends Fragment implements DatePickerDialog.
         layoutExpire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final Calendar c = Calendar.getInstance();
+                mYear = c.get(Calendar.YEAR);
+                mMonth = c.get(Calendar.MONTH);
+                mDay = c.get(Calendar.DAY_OF_MONTH);
                 new DatePickerDialog(
                         activity,
-                        insuranceEditFragment.this,
-                        insuranceEditFragment.year, insuranceEditFragment.month, insuranceEditFragment.day)
+                        insuranceEditFragment.this,insuranceEditFragment.mYear, insuranceEditFragment.mMonth, insuranceEditFragment.mDay)
                         .show();
                 showExpireDate();
             }
@@ -124,17 +128,14 @@ public class insuranceEditFragment extends Fragment implements DatePickerDialog.
         // 完成上傳
         Button btCommit = view.findViewById(R.id.btCommit);
         btCommit.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("LongLogTag")
+
             @Override
             public void onClick(View v) {
                 String date = tvInsuranceDate.getText().toString();
-                System.out.println("Update Expire Date: " + date );
                 if (date.length() <= 0) {
                     Common.showToast(activity, R.string.textDateIsInvalid);
                     return;
                 }
-                System.out.println("Update Expire Date: " + date );
-
                 insurance = insurance.updateInsurance(date);
 
                 if (Common.networkConnected(activity)) {
@@ -207,23 +208,24 @@ public class insuranceEditFragment extends Fragment implements DatePickerDialog.
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int day) {
-        insuranceEditFragment.year = year;
-        insuranceEditFragment.month = month;
-        insuranceEditFragment.day = day;
+        insuranceEditFragment.mYear = year;
+        insuranceEditFragment.mMonth = month;
+        insuranceEditFragment.mDay = day;
         updateDisplay();
     }
 
+
     private void showExpireDate() {
         Calendar calendar = Calendar.getInstance();
-        year = calendar.get(Calendar.YEAR);
-        month = calendar.get(Calendar.MONTH);
-        day = calendar.get(Calendar.DAY_OF_MONTH);
+        mYear = calendar.get(Calendar.YEAR);
+        mMonth = calendar.get(Calendar.MONTH);
+        mDay = calendar.get(Calendar.DAY_OF_MONTH);
         updateDisplay();
     }
 
     private void updateDisplay() {
-        tvInsuranceDate.setText(new StringBuilder().append(year).append("-")
-                .append(pad(month + 1)).append("-").append(pad(day))
+        tvInsuranceDate.setText(new StringBuilder().append(mYear).append("-")
+                .append(pad(mMonth + 1)).append("-").append(pad(mDay))
                 );
     }
 
@@ -250,7 +252,6 @@ public class insuranceEditFragment extends Fragment implements DatePickerDialog.
         }
     }
 
-    @SuppressLint("LongLogTag")
     private void takePicture(){
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         File dir = activity.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
@@ -278,7 +279,6 @@ public class insuranceEditFragment extends Fragment implements DatePickerDialog.
         startActivityForResult(intent, REQ_PICK_IMAGE);
     }
 
-    @SuppressLint("LongLogTag")
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -351,9 +351,6 @@ public class insuranceEditFragment extends Fragment implements DatePickerDialog.
             // 如果user不同意將資料儲存至外部儲存體的公開檔案，就將儲存按鈕設為disable
             if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
                 Toast.makeText(activity, R.string.textShouldGrant, Toast.LENGTH_SHORT).show();
-//                btPickPicture.setEnabled(false);
-//            } else {
-//                btPickPicture.setEnabled(true);
             }
         }
     }

@@ -28,15 +28,15 @@ import java.text.DecimalFormat;
 
 
 public class CustomerFragment extends Fragment {
-    private static final String TAG = "TAG_CustomerFragment";
+    private String TAG = "TAG_CustomerFragment";
     private Activity activity;
-    private TextView tvId, tvUserName, tvPhone, tvEmail, tvCarPlate;
+    private TextView tvUserName, tvPhone, tvEmail, tvCarPlate;
     private ImageView ivCustomerPhoto;
     private CommonTask carFindByIdTask;
     private ImageTask customerImageTask;
     private Customer customer;
     private int imageSize;
-
+    private int customer_id = 1;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +54,7 @@ public class CustomerFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        int customer_id = 1;
-        tvId = view.findViewById(R.id.tvId);
+
         tvUserName = view.findViewById(R.id.tvUserName);
         tvPhone = view.findViewById(R.id.tvPhone);
         tvEmail = view.findViewById(R.id.tvEmail);
@@ -114,10 +113,10 @@ public class CustomerFragment extends Fragment {
         return customer;
     }
     private void setCustomer(Customer customer){
-        DecimalFormat g1=new DecimalFormat("000");
-        String id = "C - 101";
-        id += g1.format(Integer.valueOf(customer.getCustomer_id()));
-        tvId.setText(id);
+//        DecimalFormat g1=new DecimalFormat("000");
+////        String id = "C - 101";
+////        id += g1.format(Integer.valueOf(customer.getCustomer_id()));
+////        tvId.setText(id);
         tvUserName.setText(String.valueOf(customer.getCustomer_name()));
         tvPhone.setText(String.valueOf(customer.getCustomer_phone()));
         tvEmail.setText(String.valueOf(customer.getCustomer_email()));

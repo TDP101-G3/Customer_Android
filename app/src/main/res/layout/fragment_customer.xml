@@ -23,28 +23,17 @@
             android:layout_marginEnd="32dp"
             android:layout_marginRight="32dp"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/edit"
+            android:background="@drawable/editblue"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
-
-        <TextView
-            android:id="@+id/tvId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="36dp"
-            android:text="218744321"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/ivCustomerPhoto"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginTop="16dp"
             android:src="@drawable/ic_launcher_foreground"
-            app:layout_constraintStart_toStartOf="@+id/tvId"
-            app:layout_constraintTop_toBottomOf="@+id/tvId" />
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="71dp" />
 
         <TextView
             android:id="@+id/tvUserName"

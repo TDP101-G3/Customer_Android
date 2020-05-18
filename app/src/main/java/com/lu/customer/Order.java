@@ -8,8 +8,8 @@ public class Order implements Serializable {
     private int driver_id;
     private String order_start;
     private String order_end;
-    private double customer_score;
     private double driver_score;
+    private double customer_score;
     private double order_money;
     private String order_time;
 
@@ -31,6 +31,18 @@ public class Order implements Serializable {
         this.driver_id = driver_id;
         this.order_start = order_start;
         this.order_end = order_end;
+    }
+
+    public Order(int order_id, int customer_id, int driver_id, String order_start, String order_end, double driver_score, double customer_score, double order_money, String order_time) {
+        this.order_id = order_id;
+        this.customer_id = customer_id;
+        this.driver_id = driver_id;
+        this.order_start = order_start;
+        this.order_end = order_end;
+        this.driver_score = driver_score;
+        this.customer_score = customer_score;
+        this.order_money = order_money;
+        this.order_time = order_time;
     }
 
     public String getOrder_time() {
