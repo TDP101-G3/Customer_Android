@@ -113,4 +113,17 @@
     <string name="textStartAddress">出發地</string>
     <string name="textEndAddress">目的地</string>
     <string name="textNoOrdersFound">您沒有訂單記錄</string>
+
+    <string name="textConfirmPay">確認付款</string>
+    <string name="textCannotUseGPay">無法使用 Google Pay</string>
+    <string name="textCanceled">Canceled by the user</string>
+    <!-- 開發者 > 應用程式 -->
+    <string name="TapPay_AppID">16478</string>
+    <string name="TapPay_AppKey">app_ykQ6dEWqBRz5kfqy5IthqwWCkXtsveYs8e5lLPhcnF8a81k2llyxoMvjSQEF</string>
+    <!-- 帳戶資訊 -->
+    <string name="TapPay_PartnerKey">partner_baZHmarYCq9p3erZ0XO3HyblieOAtdnis6eXhrvITFM1WqMs2A1kTQqh</string>
+    <!-- 商家管理 -->
+    <string name="TapPay_MerchantName">TW_TAISHIN</string>
+    <string name="TapPay_MerchantID">123456789_TAISHIN</string>
+    <string name="textTotal">Total</string>
 </resources>

@@ -14,10 +14,20 @@ import android.widget.Toast;
 import java.io.ByteArrayOutputStream;
 import java.util.Locale;
 
+import tech.cherri.tpdirect.api.TPDCard;
+
 public class Common {
     private static final String TAG = "TAG_Common";
     public final static String URL = "http://10.0.2.2:8080/Customer_Web/";
     public final static String PREF_FILE = "preference";
+    public static final String TAPPAY_DOMAIN_SANDBOX = "https://sandbox.tappaysdk.com";
+    public static final String TAPPAY_PAY_BY_PRIME_URL = "/tpc/payment/pay-by-prime";
+    public static final TPDCard.CardType[] CARD_TYPES = new TPDCard.CardType[]{
+            TPDCard.CardType.Visa
+            , TPDCard.CardType.MasterCard
+            , TPDCard.CardType.JCB
+            , TPDCard.CardType.AmericanExpress
+    };
 
     public static void showToast(Context context, int messageResId) {
         Toast.makeText(context, messageResId, Toast.LENGTH_SHORT).show();
