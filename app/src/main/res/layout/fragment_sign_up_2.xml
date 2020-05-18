@@ -176,6 +176,25 @@
                 android:clickable="true"
                 android:src="@drawable/group_367" />
 
+            <TextView
+                android:id="@+id/tvUserPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="18sp"
+                android:text="@string/textUserPhoto" />
+
+            <ImageView
+                android:id="@+id/ivUserPhoto"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="16dp"
+                android:clickable="true"
+                android:src="@drawable/group_367" />
+
             <Button
                 android:id="@+id/btSignUP"
                 android:layout_width="wrap_content"

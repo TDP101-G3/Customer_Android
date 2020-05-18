@@ -113,6 +113,7 @@
     <string name="textStartAddress">出發地</string>
     <string name="textEndAddress">目的地</string>
     <string name="textNoOrdersFound">您沒有訂單記錄</string>
+    <string name="textUserPhoto">大頭貼</string>
 
     <string name="textConfirmPay">確認付款</string>
     <string name="textCannotUseGPay">無法使用 Google Pay</string>
