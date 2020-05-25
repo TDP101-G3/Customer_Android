@@ -8,114 +8,102 @@
     tools:context=".user.CarInsuranceFragment">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/car"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="8dp"
-        android:background="#BCE0FD">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/ivCarIcon"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="24dp"
-            android:src="@drawable/caricon"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/ivCarConfirm"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginBottom="32dp"
-            android:src="@drawable/checked"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/ivCarIcon"
-            app:layout_constraintStart_toStartOf="@+id/ivCarIcon" />
-
-        <TextView
-            android:id="@+id/tvCarNumberTitle"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="130dp"
-            android:text="@string/textCarNumber"
-            android:textColor="#2699FB"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/tvCarNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:text="TextView"
-            android:textColor="#2699FB"
-            app:layout_constraintBottom_toBottomOf="@+id/tvCarNumberTitle"
-            app:layout_constraintStart_toEndOf="@+id/tvCarNumberTitle" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/car"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="#BCE0FD">
 
-        <TextView
-            android:id="@+id/tvCarModelTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/textCarModel"
-            android:textColor="#2699FB"
-            android:textSize="10sp"
-            app:layout_constraintStart_toStartOf="@+id/tvCarNumberTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tvCarNumberTitle" />
+                <ImageView
+                    android:id="@+id/ivCarIcon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/caricon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvCarModel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:text="TextView"
-            android:textColor="#2699FB"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvCarModelTitle"
-            app:layout_constraintStart_toEndOf="@+id/tvCarModelTitle" />
+                <ImageView
+                    android:id="@+id/ivCarConfirm"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="32dp"
+                    android:src="@drawable/checked"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/ivCarIcon"
+                    app:layout_constraintStart_toStartOf="@+id/ivCarIcon" />
 
-        <TextView
-            android:id="@+id/tvCarColor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:text="TextView"
-            android:textColor="#2699FB"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvCarModelTitle"
-            app:layout_constraintStart_toEndOf="@+id/tvCarModel" />
+                <TextView
+                    android:id="@+id/tvCarNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginLeft="80dp"
+                    android:text="TextView"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ivCarConfirm" />
 
-        <Button
-            android:id="@+id/btCarEdit"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/edit"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent" />
+                <TextView
+                    android:id="@+id/tvCarModel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivCarConfirm"
+                    app:layout_constraintStart_toStartOf="@+id/tvCarNumber" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/tvCarColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="TextView"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvCarModel"
+                    app:layout_constraintStart_toEndOf="@+id/tvCarModel" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvInsurance"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/btCarEdit"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/edit"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvInsurance"
+                android:layout_width="match_parent"
+                android:layout_height="648dp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>

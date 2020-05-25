@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10">
 
         <com.google.android.gms.maps.MapView
-            android:id="@+id/mapView3"
+            android:id="@+id/mvOrder"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:layout_marginLeft="16dp"

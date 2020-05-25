@@ -16,6 +16,9 @@
     <action
         android:id="@+id/action_customerFragment_to_carInsuranceFragment"
         app:destination="@id/carInsuranceFragment" />
+        <action
+            android:id="@+id/action_customerFragment_to_userPhotoFragment"
+            app:destination="@id/userPhotoFragment" />
     </fragment>
     <fragment
         android:id="@+id/login"
@@ -170,4 +173,9 @@
             android:id="@+id/action_logout_to_login"
             app:destination="@id/login" />
     </fragment>
+    <fragment
+        android:id="@+id/userPhotoFragment"
+        android:name="com.lu.customer.user.userPhotoFragment"
+        android:label="fragment_user_photo"
+        tools:layout="@layout/fragment_user_photo" />
 </navigation>

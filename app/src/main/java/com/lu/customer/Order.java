@@ -12,6 +12,10 @@ public class Order implements Serializable {
     private double customer_score;
     private double order_money;
     private String order_time;
+    private double start_longitude;
+    private double start_latitude;
+    private double end_longitude;
+    private double end_latitude;
 
 
 
@@ -43,6 +47,22 @@ public class Order implements Serializable {
         this.customer_score = customer_score;
         this.order_money = order_money;
         this.order_time = order_time;
+    }
+
+    public Order(int order_id, int driver_id, int customer_id, String order_start, String order_end, double driver_score, double customer_score, double order_money, String order_time, double start_longitude, double start_latitude, double end_longitude, double end_latitude) {
+        this.order_id = order_id;
+        this.driver_id = driver_id;
+        this.customer_id = customer_id;
+        this.order_start = order_start;
+        this.order_end = order_end;
+        this.driver_score = driver_score;
+        this.customer_score = customer_score;
+        this.order_money = order_money;
+        this.order_time = order_time;
+        this.start_longitude = start_longitude;
+        this.start_latitude = start_latitude;
+        this.end_longitude = end_longitude;
+        this.end_latitude = end_latitude;
     }
 
     public String getOrder_time() {
@@ -108,5 +128,37 @@ public class Order implements Serializable {
     }
     public void setDriver_score(double driver_score) {
         this.driver_score = driver_score;
+    }
+
+    public double getStart_longitude() {
+        return start_longitude;
+    }
+
+    public void setStart_longitude(double start_longitude) {
+        this.start_longitude = start_longitude;
+    }
+
+    public double getStart_latitude() {
+        return start_latitude;
+    }
+
+    public void setStart_latitude(double start_latitude) {
+        this.start_latitude = start_latitude;
+    }
+
+    public double getEnd_longitude() {
+        return end_longitude;
+    }
+
+    public void setEnd_longitude(double end_longitude) {
+        this.end_longitude = end_longitude;
+    }
+
+    public double getEnd_latitude() {
+        return end_latitude;
+    }
+
+    public void setEnd_latitude(double end_latitude) {
+        this.end_latitude = end_latitude;
     }
 }

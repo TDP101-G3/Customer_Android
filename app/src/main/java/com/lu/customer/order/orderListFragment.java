@@ -2,6 +2,7 @@ package com.lu.customer.order;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -27,18 +28,23 @@ import com.lu.customer.R;
 import java.lang.reflect.Type;
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class orderListFragment extends Fragment {
     private String TAG = "TAG_OrderListFragment";
     private Activity activity;
     private RecyclerView rvOrderHistory;
     private CommonTask orderGetAllTask;
     private List<Order> orders;
-    int customer_id = 1;
+    int customer_id;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activity = getActivity();
+        SharedPreferences pref = activity.getSharedPreferences(Common.PREF_FILE,
+                MODE_PRIVATE);
+        customer_id = pref.getInt("customer_id", 0);
     }
 
     @Override
@@ -53,27 +59,23 @@ public class orderListFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         orders = getOrders(customer_id);
-        System.out.println("orders: " + orders);
         rvOrderHistory = view.findViewById(R.id.rvOrderHistory);
         rvOrderHistory.setLayoutManager(new LinearLayoutManager(activity));
         showOrders(orders);
-
-
     }
 
     private List<Order> getOrders(int customer_id) {
         List<Order> orders = null;
         if (Common.networkConnected(activity)) {
-            String url = Common.URL + "/CustomerServlet";
+            String url = Common.URL + "/OrderServlet";
             JsonObject jsonObject = new JsonObject();
             jsonObject.addProperty("action", "getOrders");
-            jsonObject.addProperty("customer_id", customer_id);
+            jsonObject.addProperty("id", customer_id);
+            jsonObject.addProperty("role", "customer");
             String jsonOut = jsonObject.toString();
-            System.out.println("orders String jsonOut: " + jsonOut);
             orderGetAllTask = new CommonTask(url, jsonOut);
             try{
                 String jsonIn = orderGetAllTask.execute().get();
-                System.out.println("getOrder input orders: " + jsonIn);
                 Type listType = new TypeToken<List<Order>>() {
                 }.getType(); // ???????????
                 orders = new Gson().fromJson(jsonIn, listType);
@@ -90,15 +92,11 @@ public class orderListFragment extends Fragment {
         if (orders == null || orders.isEmpty()){
             Common.showToast(activity, R.string.textNoOrdersFound);
         }
-        // 準備一個recyclerView的類別 並且抓他的內容 準備連server
         orderListFragment.OrderHistoryAdapter orderAdapter = (orderListFragment.OrderHistoryAdapter) rvOrderHistory.getAdapter();
         if (orderAdapter == null) {
-            // 如果沒有內容，則new出來執行rv顯示的指令
             rvOrderHistory.setAdapter(new orderListFragment.OrderHistoryAdapter(activity, orders));
         } else {
-            // 如果已有內容，則延續壽命this.books = books;
             orderAdapter.setOrders(orders);
-            // 叫adapter去重新刷新畫面 getView()
             orderAdapter.notifyDataSetChanged();
         }
     }

@@ -2,6 +2,7 @@ package com.lu.customer.user;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -31,6 +32,8 @@ import com.lu.customer.R;
 import java.lang.reflect.Type;
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
+
 
 public class CarInsuranceFragment extends Fragment {
     private static final String TAG = "TAG_CarAssuranceFragment";
@@ -41,12 +44,15 @@ public class CarInsuranceFragment extends Fragment {
     private List<Insurance> insurances;
     private Customer customer;
     private ConstraintLayout layoutExpire;
-    int customer_id = 1;
+    int customer_id;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activity = getActivity();
+        SharedPreferences pref = activity.getSharedPreferences(Common.PREF_FILE,
+                MODE_PRIVATE);
+        customer_id = pref.getInt("customer_id", 0);
     }
 
     @Override

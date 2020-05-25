@@ -31,9 +31,14 @@
             android:id="@+id/ivCustomerPhoto"
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="71dp"
+            android:layout_marginBottom="69dp"
             android:src="@drawable/ic_launcher_foreground"
-            tools:layout_editor_absoluteX="24dp"
-            tools:layout_editor_absoluteY="71dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvUserName"
@@ -46,6 +51,14 @@
             app:layout_constraintBottom_toBottomOf="@+id/ivCustomerPhoto"
             app:layout_constraintStart_toEndOf="@+id/ivCustomerPhoto"
             app:layout_constraintTop_toTopOf="@+id/ivCustomerPhoto" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/editblue"
+            app:layout_constraintBottom_toBottomOf="@+id/ivCustomerPhoto"
+            app:layout_constraintEnd_toEndOf="@+id/ivCustomerPhoto" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -100,7 +113,7 @@
             android:layout_marginEnd="32dp"
             android:layout_marginRight="32dp"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/edit"
+            android:background="@drawable/editblue"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -114,7 +127,7 @@
             android:layout_marginLeft="32dp"
             android:layout_marginTop="48dp"
             android:text="CAT-123"
-            android:textColor="#2699FB"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -125,7 +138,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
             android:text="我的車輛1"
-            android:textColor="#2699FB"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="12sp"
             app:layout_constraintBottom_toTopOf="@+id/tvCarPlate"
             app:layout_constraintStart_toStartOf="@+id/tvCarPlate" />

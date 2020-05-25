@@ -2,6 +2,7 @@ package com.lu.customer.user;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -26,6 +27,8 @@ import com.lu.customer.R;
 
 import java.text.DecimalFormat;
 
+import static android.content.Context.MODE_PRIVATE;
+
 
 public class CustomerFragment extends Fragment {
     private String TAG = "TAG_CustomerFragment";
@@ -36,11 +39,14 @@ public class CustomerFragment extends Fragment {
     private ImageTask customerImageTask;
     private Customer customer;
     private int imageSize;
-    private int customer_id = 1;
+    private int customer_id;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activity = getActivity();
+        SharedPreferences pref = activity.getSharedPreferences(Common.PREF_FILE,
+                MODE_PRIVATE);
+        customer_id = pref.getInt("customer_id", 0);
     }
 
 
@@ -63,6 +69,13 @@ public class CustomerFragment extends Fragment {
         customer = findById(customer_id);
         setCustomer(customer);
         setCustomerPhoto(customer_id);
+
+        ivCustomerPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_customerFragment_to_userPhotoFragment);
+            }
+        });
 
         Button btUser = view.findViewById(R.id.btUser);
         btUser.setOnClickListener(new View.OnClickListener() {
@@ -113,10 +126,6 @@ public class CustomerFragment extends Fragment {
         return customer;
     }
     private void setCustomer(Customer customer){
-//        DecimalFormat g1=new DecimalFormat("000");
-////        String id = "C - 101";
-////        id += g1.format(Integer.valueOf(customer.getCustomer_id()));
-////        tvId.setText(id);
         tvUserName.setText(String.valueOf(customer.getCustomer_name()));
         tvPhone.setText(String.valueOf(customer.getCustomer_phone()));
         tvEmail.setText(String.valueOf(customer.getCustomer_email()));

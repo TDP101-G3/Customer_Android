@@ -113,4 +113,7 @@
     <string name="textStartAddress">出發地</string>
     <string name="textEndAddress">目的地</string>
     <string name="textNoOrdersFound">您沒有訂單記錄</string>
+    <string name="textPersonalPhoto">上傳照片</string>
+    <string name="textTryAgain">請再試一次</string>
+    <string name="textNoMap">Google Map 無法顯示</string>
 </resources>

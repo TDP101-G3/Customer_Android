@@ -1,6 +1,7 @@
 package com.lu.customer.user;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,17 +24,23 @@ import com.lu.customer.CommonTask;
 import com.lu.customer.Customer;
 import com.lu.customer.R;
 
+import static android.content.Context.MODE_PRIVATE;
+
 
 public class CarEditFragment extends Fragment {
     private static final String TAG = "TAG_CarEditFragment";
     FragmentActivity activity;
     private TextInputEditText etPlate, etBrand, etModel, etColor;
     private Customer customer;
+    private int customer_id;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activity = getActivity();
+//        SharedPreferences pref = activity.getSharedPreferences(Common.PREF_FILE,
+//                MODE_PRIVATE);
+//        customer_id = pref.getInt("customer_id", 0);
     }
 
     @Override
