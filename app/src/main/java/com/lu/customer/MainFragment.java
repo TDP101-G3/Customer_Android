@@ -38,6 +38,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.List;
 
@@ -63,6 +64,7 @@ public class MainFragment extends Fragment {
     private LocalBroadcastManager broadcastManager;
     private String order_start,order_end;
     private String user,driver;
+    private double order_money,driver_income;
     private Handler handler = new Handler();
     private Runnable runnable;
     private int money,distance;
@@ -86,6 +88,7 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        activity.setTitle(R.string.textMain);
         return inflater.inflate(R.layout.fragment_main, container, false);
     }
     @Override
@@ -109,7 +112,7 @@ public class MainFragment extends Fragment {
         btCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            call();
+                call();
             }
         });
 
@@ -209,6 +212,9 @@ public class MainFragment extends Fragment {
                     money = money + (20*50) + (distance-30)/2*50;
                 }
                 String text ="出發地：\n"+startLocationName+"\n目的地：\n"+endLocationName+"\n金額："+money;
+                order_money = money;
+                DecimalFormat mDecimalFormat = new DecimalFormat("#.#");
+                driver_income = Double.parseDouble(mDecimalFormat.format((double) money*2/3));
                 new AlertDialog.Builder(activity)
                         /* 設定標題 */
                         .setTitle(R.string.textMessage)
@@ -268,7 +274,7 @@ public class MainFragment extends Fragment {
             else if(requestCode == REQ_WAIT){
                 if (Common.networkConnected(activity)) {
                     String url = Common.URL + "OrderServlet";
-                    Order order = new Order(customer_id, driver_id, order_start, order_end);
+                    Order order = new Order(customer_id, driver_id, order_start, order_end, order_money, driver_income);
                     JsonObject jsonObject = new JsonObject();
                     jsonObject.addProperty("action", "orderInsert");
                     jsonObject.addProperty("order", new Gson().toJson(order));

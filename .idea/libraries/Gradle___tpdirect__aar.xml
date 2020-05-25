@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: :tpdirect:@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/0b5801dc97f02f8bd3886c12c4afcdc6/jetified-tpdirect/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/0b5801dc97f02f8bd3886c12c4afcdc6/jetified-tpdirect/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -144,7 +144,7 @@ public class CallFragment extends Fragment {
                     tvTime.setText(time);
                 }
                 //CommonTwo.showToast(activity,"runnable start");
-                handler.postDelayed(this,6000); //6秒 單位：ms
+                handler.postDelayed(this,1000); //1秒 單位：ms
                 //postDelayed(this,6000)方法安排一個Runnable物件到主執行緒佇列中
             }
         };
@@ -154,6 +154,7 @@ public class CallFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        activity.setTitle(R.string.textCall);
         return inflater.inflate(R.layout.fragment_call, container, false);
     }
 

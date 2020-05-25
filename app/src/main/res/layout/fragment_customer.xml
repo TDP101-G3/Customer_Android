@@ -31,10 +31,14 @@
             android:id="@+id/ivCustomerPhoto"
             android:layout_width="60dp"
             android:layout_height="60dp"
+<<<<<<< HEAD
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="71dp"
             android:layout_marginBottom="69dp"
+=======
+            android:layout_marginLeft="16dp"
+>>>>>>> 851b43084aa18d87b80b65df1bf1645de8e0552d
             android:src="@drawable/ic_launcher_foreground"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
