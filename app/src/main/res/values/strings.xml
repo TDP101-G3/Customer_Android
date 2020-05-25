@@ -113,11 +113,11 @@
     <string name="textStartAddress">出發地</string>
     <string name="textEndAddress">目的地</string>
     <string name="textNoOrdersFound">您沒有訂單記錄</string>
-<<<<<<< HEAD
+
     <string name="textPersonalPhoto">上傳照片</string>
     <string name="textTryAgain">請再試一次</string>
     <string name="textNoMap">Google Map 無法顯示</string>
-=======
+
     <string name="textUserPhoto">大頭貼</string>
 
     <string name="textConfirmPay">確認付款</string>
@@ -133,5 +133,4 @@
     <string name="TapPay_MerchantID">123456789_TAISHIN</string>
     <string name="textTotal">Total</string>
     <string name="textMain">首頁</string>
->>>>>>> 851b43084aa18d87b80b65df1bf1645de8e0552d
 </resources>
