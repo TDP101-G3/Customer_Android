@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private TextView tvNameinfo,tvScoreinfo;
-    private int customer_id = 1;
+    private int customer_id;
     private CircleImageView ivUser;
     private Customer customer = null;
     private Order order = null;

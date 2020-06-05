@@ -133,4 +133,6 @@
     <string name="TapPay_MerchantID">123456789_TAISHIN</string>
     <string name="textTotal">Total</string>
     <string name="textMain">首頁</string>
+    <string name="textReaction">意見反應</string>
+    <string name="textNoOpinionsFound">no opinion found</string>
 </resources>

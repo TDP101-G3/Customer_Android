@@ -274,7 +274,7 @@ public class MainFragment extends Fragment {
             else if(requestCode == REQ_WAIT){
                 if (Common.networkConnected(activity)) {
                     String url = Common.URL + "OrderServlet";
-                    Order order = new Order(customer_id, driver_id, order_start, order_end, order_money, driver_income);
+                    Order order = new Order(customer_id, driver_id, order_start, order_end, order_money, driver_income,startLongitude,startLatitude,endLongitude,endLatitude);
                     JsonObject jsonObject = new JsonObject();
                     jsonObject.addProperty("action", "orderInsert");
                     jsonObject.addProperty("order", new Gson().toJson(order));

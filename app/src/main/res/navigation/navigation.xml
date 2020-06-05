@@ -178,4 +178,28 @@
         android:name="com.lu.customer.user.userPhotoFragment"
         android:label="fragment_user_photo"
         tools:layout="@layout/fragment_user_photo" />
+    <fragment
+        android:id="@+id/opinionFragment"
+        android:name="com.lu.customer.opinionFragment"
+        android:label="fragment_opinion"
+        tools:layout="@layout/fragment_opinion" />
+    <fragment
+        android:id="@+id/opinionReactionFragment"
+        android:name="com.lu.customer.OpinionReactionFragment"
+        android:label="fragment_opinion_reaction"
+        tools:layout="@layout/fragment_opinion_reaction" />
+    <fragment
+        android:id="@+id/opinionDetailFragment"
+        android:name="com.lu.customer.OpinionDetailFragment"
+        android:label="fragment_opinion_detail"
+        tools:layout="@layout/fragment_opinion_detail" />
+    <fragment
+        android:id="@+id/opinionRespondFragment"
+        android:name="com.lu.customer.OpinionRespondFragment"
+        android:label="fragment_opinion_respond"
+        tools:layout="@layout/fragment_opinion_respond" >
+        <action
+            android:id="@+id/action_opinionRespondFragment_to_opinionDetailFragment"
+            app:destination="@id/opinionDetailFragment" />
+    </fragment>
 </navigation>

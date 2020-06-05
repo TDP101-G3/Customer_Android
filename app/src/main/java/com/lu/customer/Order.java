@@ -30,13 +30,17 @@ public class Order implements Serializable {
         this.driver_score = driver_score;
     }
 
-    public Order(int customer_id, int driver_id, String order_start, String order_end, double order_money,double driver_income){
+    public Order(int customer_id, int driver_id, String order_start, String order_end, double order_money,double driver_income,double start_longitude,double start_latitude,double end_longitude,double end_latitude){
         this.customer_id = customer_id;
         this.driver_id = driver_id;
         this.order_start = order_start;
         this.order_end = order_end;
         this.order_money = order_money;
         this.driver_income = driver_income;
+        this.start_longitude = start_longitude;
+        this.start_latitude = start_latitude;
+        this.end_longitude = end_longitude;
+        this.end_latitude = end_latitude;
     }
 
     public Order(int order_id, int customer_id, int driver_id, String order_start, String order_end, double driver_score, double customer_score, double order_money, String order_time) {
